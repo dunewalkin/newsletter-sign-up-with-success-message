@@ -26,8 +26,8 @@ function validation (str) {
  };
 
  function showError () {
-   errMessage.classList.remove("hide");
-   mailAddress.classList.add("error");
+   errMessage.classList.toggle("hide");
+   mailAddress.classList.toggle("error");
  }
 
  function hideError () {
@@ -51,13 +51,13 @@ form.addEventListener('submit', (e)  => {
     if (valid) {
       updateSuccessMessage();
       switchPages();
+      hideError();
+      resetForm();
     }
 });
 
 
 secondaryButton.addEventListener('click', ()  => {
-   hideError();
-   resetForm();
    switchPages();
 });
 
